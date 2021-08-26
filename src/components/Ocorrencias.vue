@@ -45,6 +45,7 @@
                     </v-col>
                     <v-col cols="12" sm="6" md="6">
                       <v-text-field
+                        v-mask="['###.###.###-##']"
                         :rules="cpfRules"
                         v-model="editedItem.cpf"
                         label="CPF"
@@ -60,7 +61,7 @@
                         label="E-mail"
                       ></v-text-field>
                     </v-col>
-                     <v-col cols="12" sm="4" md="4">
+                    <v-col cols="12" sm="4" md="4">
                       <v-menu
                         v-model="menu2"
                         :close-on-content-click="false"
@@ -88,7 +89,6 @@
                     </v-col>
                   </v-row>
                   <v-row>
-                   
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
                         :rules="ruleRequired"
@@ -171,7 +171,7 @@ export default {
   data() {
     return {
       optionsTableFooter: {
-        itemsPerPageText: 'Ocorrências por página:'
+        itemsPerPageText: "Ocorrências por página:",
       },
       causas: [
         "Chuva excessiva",
@@ -292,7 +292,7 @@ export default {
         {
           nome: form.nome,
           email: form.email,
-          cpf: form.cpf,
+          cpf: form.cpf.replaceAll(".","").replaceAll("-",""),
           data_colheita: form.data_colheita,
           lavoura: form.lavoura,
           causa: form.causa,
@@ -313,7 +313,7 @@ export default {
         {
           nome: form.nome,
           email: form.email,
-          cpf: form.cpf,
+          cpf: form.cpf.replaceAll(".","").replaceAll("-",""),
           data_colheita: form.data_colheita,
           lavoura: form.lavoura,
           causa: form.causa,
@@ -365,8 +365,6 @@ export default {
     },
 
     save() {
-      //eslint-disable-next-line
-      debugger;
       if (this.editedIndex > -1) {
         Object.assign(this.ocorrencias[this.editedIndex], this.editedItem);
         this.atualizOccor(this.editedItem);
@@ -424,7 +422,6 @@ export default {
           Math.cos(lat2);
       var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
       var d = R * c;
-      console.log(d);
       return d;
     },
 
