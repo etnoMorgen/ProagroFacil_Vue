@@ -1,24 +1,17 @@
-# proagrofacil_vue
+# Proagro Fácil (Front-End)
 
-## Project setup
+Projeto de front-end de um sistema que realiza cadastro de perdas de lavoura, além de busca, alteração e remoção dos cadastros. A interface foi feita utilizando Vue.js 2 e Vuetify.
+
+Coloque este projeto no mesmo nível que a API Proagro Fácil (Back-End), que se encontra no meu repositório [etnoMorgen (github.com)](https://github.com/etnoMorgen).
+
+**Project setup**
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compila o projeto e roda o servidor:
+
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
